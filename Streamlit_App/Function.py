@@ -57,11 +57,7 @@ def find_closest(name, index, num, scaled_df, df_with_names):
     Returns: list of indexes of closest episodes'''
     ordered_array = pairwise_distances(np.array(scaled_resorts_df.loc[index]).reshape(1, -1)
                                        ,scaled_df,metric='euclidean').argsort()
-    #print(ordered_array)
-    #print(index)
-    #print(ordered_array[0][0:7])
     scaled_idx = name_to_index(name, df_with_names)
-    #print(scaled_idx)
     top = []
     if ordered_array[0][0] == scaled_idx:
         for i in range(1, num+1):
@@ -105,47 +101,3 @@ def distance(lat1, lon1, lat2, lon2):
     a = 0.5 - np.cos((lat2-lat1)*p)/2 + np.cos(lat1*p) * np.cos(lat2*p) * (1-np.cos((lon2-lon1)*p))/2
     km = 12742 * np.arcsin(np.sqrt(a))
     return km*0.621371
-
-print(find_resort('Breckenridge', 5, resorts))
-
-#resorts_data = limit_price(resorts, 200)
-#print(find_resort('Vail', 5, resorts_data))
-
-#print(limit_distance(resorts, 300, 41.6651, -70.0892))
-
-vail = resorts[resorts['Resort_Name']=='Vail']
-big_sky = resorts[resorts['Resort_Name']=='Big Sky Resort']
-breckenridge = resorts[resorts['Resort_Name']=='Breckenridge']
-killington = resorts[resorts['Resort_Name'] == 'Killington']
-snowmass = resorts[resorts['Resort_Name'] == 'Snowmass']
-jackson_hole = resorts[resorts['Resort_Name'] == 'Jackson Hole']
-sugarbush = resorts[resorts['Resort_Name'] == 'Sugarbush']
-telluride = resorts[resorts['Resort_Name'] == 'Telluride']
-snowbasin = resorts[resorts['Resort_Name'] == 'Snowbasin']
-winter_park = resorts[resorts['Resort_Name'] == 'Winter Park Resort']
-
-#print(find_resort('Vail'))
-#print(name_to_index('Vail'))
-#print(name_to_index('Sun Valley'))
-#print(find_resort('Sun Valley'))
-#print(resorts[resorts['Resort_Name'] == 'Sun Valley'])
-#print(limit_region(resorts, 'Eastern US').head())
-vail_scale = scale_resorts_data(vail)
-big_sky_scale = scale_resorts_data(big_sky)
-killington_scale = scale_resorts_data(killington)
-snowmass_scale = scale_resorts_data(snowmass)
-breckenridge_scale = scale_resorts_data(breckenridge)
-sugarbush_scale = scale_resorts_data(sugarbush)
-jackson_hole_scale = scale_resorts_data(jackson_hole)
-telluride_scale = scale_resorts_data(telluride)
-winter_park_scale = scale_resorts_data(winter_park)
-
-print(pairwise_distances(np.array(vail_scale).reshape(1, -1)
-                                     ,killington_scale,metric='euclidean'))
-
-
-
-
-
-
-
