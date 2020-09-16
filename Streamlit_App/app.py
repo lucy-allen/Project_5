@@ -29,11 +29,6 @@ no_fave = st.selectbox('Do You Have a Favorite Resort?', ['Yes', 'No'])
 region = st.selectbox('Do you have a region of preference', ['ALL', 'Western US', 'Eastern US', 'Midwest US'])
 'You selected: ', region
 
-#coords = resorts_df[['Latitude', 'Longditude']]
-#coords.rename(columns={'Latitude':'lat', 'Longditude':'lon'}, inplace=True)
-#st.map(coords)
-#no_prev_fave = st.checkbox('I do not have a favorite resort:(')
-
 if no_fave == 'Yes':    
     fave_resort = st.selectbox('Which Ski Resort do you like best?', resorts_df['Resort_Name'])
     'You selected: ', fave_resort
@@ -125,21 +120,9 @@ else:
 
     st.write('Happy Skiing!!')
 
-#coords = resorts_df[['Latitude', 'Longditude']]
-#coords.rename(columns={'Latitude':'lat', 'Longditude':'lon'}, inplace=True)
-#index_vals = []
-#for rec in recommendations:
- #   index_vals.append(name_to_index(rec, resorts_df))
-   
-#coords.iloc[index_vals]  
-#coords = resorts_df[['Latitude', 'Longditude']]
-#coords.rename(columns={'Latitude':'lat', 'Longditude':'lon'}, inplace=True)
-#st.map(coords.iloc[index_vals])
-#if location == True or region != 'ALL':
- #   st.map(coords)
 st.image('Whitefish.JPG', width=700)
 st.write('Data Source: skiresort.info')
-#print(resorts.head(5))
+
 
 
 
