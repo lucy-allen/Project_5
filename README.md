@@ -1,6 +1,6 @@
 # Metis Project 5
 ### Ski Resort Recommender
-Using Data that I web scraped from [skiresort.info](www.skiresort.info) I created a Web Application throuhg Streamlit to Recommend New Ski Resorts to users based on the user's previous favorite resort as well as additional optional features.
+Using Data that I web scraped from [skiresort.info](https://www.skiresort.info) I created a Web Application throuhg Streamlit to Recommend New Ski Resorts to users based on the user's previous favorite resort as well as additional optional features.
 
 ##### Objective
 Help Skier's Explore new mountains adn terrain while still ensuring that they will enjoy the new mountains recommended to them.
